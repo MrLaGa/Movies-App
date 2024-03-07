@@ -10,7 +10,7 @@ function Home(){
         {/* <Navbar></Navbar> */}
         <Banner></Banner>
         <Trendingmovies></Trendingmovies>
-        <Pagination></Pagination>
+        {/* <Pagination></Pagination> */}
         </>
     
     )
