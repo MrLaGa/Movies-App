@@ -18,7 +18,7 @@ function Banner(){
     
       
     return(
-        <div className="flex justify-center	items-end h-[70vh] bg-cover bg-repeat	"
+        <div className="flex bg-slate-800 shadow-lg shadow-gray-400 justify-center items-end h-[70vh] bg-cover bg-repeat	"
         style={{backgroundImage:`url(https://image.tmdb.org/t/p/original${movieObj.backdrop_path})`}}>
             <div className=" text-slate-300	 text-lg bg-gray-800/50	w-full text-center p-2"	>{movieObj.title}</div>
         </div>
