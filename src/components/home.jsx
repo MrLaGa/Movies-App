@@ -3,13 +3,22 @@ import Banner from "./banner"
 import Trendingmovies from "./trendingmovies"
 import Pagination from "./pagination"
  
-function Home(){
+function Home({
+           WatchList, 
+           handleaddWL,
+           handleremoveWL,
+           setwatchlist,
+}){
     return(
         <>
         
         {/* <Navbar></Navbar> */}
         <Banner></Banner>
-        <Trendingmovies></Trendingmovies>
+        <Trendingmovies WatchList ={WatchList}
+                        handleaddWL={handleaddWL}
+                        handleremoveWL={handleremoveWL}
+                        setwatchlist={setwatchlist}
+        />
         {/* <Pagination></Pagination> */}
         </>
     
