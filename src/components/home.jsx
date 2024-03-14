@@ -8,6 +8,9 @@ function Home({
            handleaddWL,
            handleremoveWL,
            setwatchlist,
+           pageNo,
+           Handlenext,
+           Handleprev,
 }){
     return(
         <>
@@ -18,6 +21,9 @@ function Home({
                         handleaddWL={handleaddWL}
                         handleremoveWL={handleremoveWL}
                         setwatchlist={setwatchlist}
+                        pageNo={pageNo}
+                        Handlenext={Handlenext}
+                        Handleprev={Handleprev}
         />
         {/* <Pagination></Pagination> */}
         </>

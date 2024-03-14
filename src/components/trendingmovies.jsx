@@ -8,21 +8,13 @@ function Trendingmovies(
     handleaddWL,
     handleremoveWL,
     setwatchlist,
+    pageNo,
+    Handlenext,
+    Handleprev,
    }
 ){
 
     const [movies, setMovies] = useState([]);
-    const[pageNo, setpageNo] = useState(1);
-    
-
-    function Handleprev(){
-       if(pageNo>1){
-           setpageNo(pageNo-1);
-       }
-    }
-    function Handlenext(){
-       setpageNo(pageNo+1);
-    }
 
 
     useEffect(()=>{

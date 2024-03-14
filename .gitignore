@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/components/movieicon.jpeg
+src/components/navbar.jsx
+.gitignore
+src/components/navbar.jsx

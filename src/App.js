@@ -8,6 +8,17 @@ import { useState,useEffect } from 'react';
 
 function App() {
   const[WatchList, setwatchlist] = useState([]);
+  const[pageNo, setpageNo] = useState(1);
+    
+
+    function Handleprev(){
+       if(pageNo>1){
+           setpageNo(pageNo-1);
+       }
+    }
+    function Handlenext(){
+       setpageNo(pageNo+1);
+    }
 
 
     function handleaddWL(MovieObj){
@@ -42,11 +53,15 @@ function App() {
                                 handleaddWL={handleaddWL}
                                 handleremoveWL={handleremoveWL}
                                 setwatchlist={setwatchlist}
+                                pageNo={pageNo}
+                                Handlenext={Handlenext}
+                                Handleprev={Handleprev}
 
       />}></Route>
       <Route path='/WatchList' element={ <Watchlist
                                WatchList={WatchList}
                                handleremoveWL={handleremoveWL}
+                               setwatchlist={setwatchlist}
       />}></Route>
     </Routes>
     </BrowserRouter>
