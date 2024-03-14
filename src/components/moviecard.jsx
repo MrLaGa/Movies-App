@@ -1,15 +1,18 @@
+import { useContext } from "react";
+import { movieContext } from "./movieContext"
 
 
-function moviecard(
+
+export default function Moviecard(
   { 
     movieObj,
     title,
     posterpath,
-    WatchList,
-    handleaddWL,
-    handleremoveWL,
+   
   }
 ){
+  const {WatchList, handleaddWL, handleremoveWL} = useContext(movieContext)
+
   function isContain(movieObj1){
     for(let i=0;i<WatchList.length;i++){
         if(movieObj1.id===WatchList[i].id){
@@ -38,5 +41,3 @@ function moviecard(
     </div> 
     )
 }
-
-export default moviecard

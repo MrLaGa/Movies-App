@@ -1,4 +1,6 @@
 import { useState,useEffect } from "react";
+import { useContext } from "react";
+import { movieContext } from "./movieContext";
 const genreName = {
     28: "Action",
     12: "Adventure",
@@ -21,12 +23,9 @@ const genreName = {
     37: "Western",
 }
 
-export default function WatchList(
-    {WatchList,
-    handleremoveWL,
-    setwatchlist,
-}){
+export default function WatchList(){
 
+  const{WatchList,handleremoveWL,setwatchlist} = useContext(movieContext)
  const [search,setsearch] = useState("");
   const [genreList,setGenreList] = useState(["All Genre"])
   

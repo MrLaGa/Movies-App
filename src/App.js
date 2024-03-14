@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Watchlist from './components/Watchlist';
 import Navbar from './components/navbar';
 import { useState,useEffect } from 'react';
+import { movieContext } from './components/movieContext';
 
 function App() {
   const[WatchList, setwatchlist] = useState([]);
@@ -46,24 +47,13 @@ function App() {
 
   return (
     <BrowserRouter>
+    <movieContext.Provider value={{WatchList, handleaddWL, handleremoveWL, setwatchlist,pageNo, Handlenext, Handleprev}}>
     <Navbar></Navbar>
     <Routes>
-      <Route path='/' element={<Home
-                                WatchList={WatchList}
-                                handleaddWL={handleaddWL}
-                                handleremoveWL={handleremoveWL}
-                                setwatchlist={setwatchlist}
-                                pageNo={pageNo}
-                                Handlenext={Handlenext}
-                                Handleprev={Handleprev}
-
-      />}></Route>
-      <Route path='/WatchList' element={ <Watchlist
-                               WatchList={WatchList}
-                               handleremoveWL={handleremoveWL}
-                               setwatchlist={setwatchlist}
-      />}></Route>
+      <Route path='/' element={<Home/>}></Route>
+      <Route path='/WatchList' element={ <Watchlist/>}></Route>
     </Routes>
+    </movieContext.Provider>
     </BrowserRouter>
     // <Home></Home>
   );

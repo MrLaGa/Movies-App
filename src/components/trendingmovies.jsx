@@ -1,18 +1,13 @@
 import axios from "axios"
-import Moviecard from "./moviecard"
+import Moviecard from "./Moviecard"
 import React, { useEffect, useState } from 'react'
 import Pagination from './pagination'
+import { useContext } from "react"
+import { movieContext } from './movieContext';
 
-function Trendingmovies(
-   { WatchList, 
-    handleaddWL,
-    handleremoveWL,
-    setwatchlist,
-    pageNo,
-    Handlenext,
-    Handleprev,
-   }
-){
+
+function Trendingmovies(){
+    const{pageNo} = useContext(movieContext)
 
     const [movies, setMovies] = useState([]);
 
@@ -39,19 +34,14 @@ function Trendingmovies(
                         movieObj={movieObj}
                         title = {movieObj.title}
                         posterpath = {movieObj.poster_path}
-                        WatchList={WatchList}
-                        handleaddWL = {handleaddWL}
-                        handleremoveWL = {handleremoveWL}
+                        
             
                       />
             })
         }
         
         </div>
-        <Pagination Handlenext={Handlenext}
-                    Handleprev={Handleprev}
-                    pageNo = {pageNo}
-        />
+        <Pagination/>
         
         </>
         
